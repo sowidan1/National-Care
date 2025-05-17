@@ -30,8 +30,8 @@ class Product extends Model
 
     public function getImageUrlAttribute($value)
     {
-        if ($value && !filter_var($value, FILTER_VALIDATE_URL)) {
-            return asset('storage/' . $value);
+        if ($value && ! filter_var($value, FILTER_VALIDATE_URL)) {
+            return asset('storage/'.$value);
         }
 
         return $value;

@@ -2,11 +2,11 @@
 
 namespace App\Http\Services\Services;
 
+use App\Http\Requests\OrderStoreRequest;
 use App\Http\Services\Contracts\OrderContract;
 use App\Models\Order;
-use Illuminate\Http\Request;
-use App\Http\Requests\OrderStoreRequest;
 use App\Models\OrderItem;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
@@ -30,7 +30,7 @@ class OrderService implements OrderContract
         try {
             DB::beginTransaction();
 
-            $total = collect($request->items)->sum(fn($item) => $item['price'] * $item['quantity']);
+            $total = collect($request->items)->sum(fn ($item) => $item['price'] * $item['quantity']);
 
             $order = Order::create([
                 'id' => Str::ulid(),
@@ -63,7 +63,7 @@ class OrderService implements OrderContract
             DB::rollBack();
 
             return response()->json([
-                'message' => 'Failed to place order: ' . $e->getMessage(),
+                'message' => 'Failed to place order: '.$e->getMessage(),
             ], 500);
         }
     }

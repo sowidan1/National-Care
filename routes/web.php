@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
@@ -39,6 +38,5 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     // Categories Resource
     Route::resource('categories', CategoryController::class);
 });
-
 
 require __DIR__.'/auth.php';

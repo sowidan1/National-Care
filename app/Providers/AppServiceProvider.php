@@ -12,8 +12,8 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->app->bind('OrderService',function(){
-            return new OrderService();
+        $this->app->bind('OrderService', function () {
+            return new OrderService;
         });
     }
 
