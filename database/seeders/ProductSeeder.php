@@ -1,0 +1,841 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Uid\Ulid;
+
+class ProductSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $products = [
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Digital Thermometer',
+                'description' => 'Accurate digital thermometer for temperature reading.',
+                'price'       => 19.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Blood Pressure Monitor',
+                'description' => 'Automatic blood pressure monitor for home use.',
+                'price'       => 65.50,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Vitamin C Tablets',
+                'description' => '1000mg Vitamin C tablets for immune support.',
+                'price'       => 12.75,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Pain Relief Gel',
+                'description' => 'Fast-acting gel for muscle and joint pain.',
+                'price'       => 8.99,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Digital Glucose Meter',
+                'description' => 'Accurate glucose monitoring device for diabetic patients.',
+                'price'       => 35.25,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Antiseptic Wound Spray',
+                'description' => 'Spray for cleaning and disinfecting minor wounds.',
+                'price'       => 7.50,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Cold & Flu Relief Tablets',
+                'description' => 'Relief from symptoms of colds and flu.',
+                'price'       => 6.25,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Multivitamin Complex',
+                'description' => 'Daily multivitamin tablets for overall health.',
+                'price'       => 14.99,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'First Aid Kit',
+                'description' => 'Comprehensive first aid kit for home emergencies.',
+                'price'       => 24.50,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Headache Relief Tablets',
+                'description' => 'Fast-acting tablets for headache relief.',
+                'price'       => 5.99,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Ibuprofen Tablets',
+                'description' => 'Anti-inflammatory pain relief medication.',
+                'price'       => 6.49,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Muscle Relaxant Cream',
+                'description' => 'Soothing cream for muscle tension and spasms.',
+                'price'       => 11.25,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Heat Therapy Patch',
+                'description' => 'Self-heating patch for back and muscle pain.',
+                'price'       => 8.75,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Joint Pain Relief Capsules',
+                'description' => 'Targeted relief for joint pain and stiffness.',
+                'price'       => 15.99,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Migraine Relief Medicine',
+                'description' => 'Fast-acting relief specifically for migraines.',
+                'price'       => 12.50,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Arthritis Pain Gel',
+                'description' => 'Specialized gel for arthritis-related pain.',
+                'price'       => 14.75,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Dental Pain Relief Drops',
+                'description' => 'Targeted relief for toothaches and gum pain.',
+                'price'       => 9.25,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Menstrual Pain Relief',
+                'description' => 'Specifically formulated for menstrual cramps and discomfort.',
+                'price'       => 7.99,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Extra Strength Pain Tablets',
+                'description' => 'Higher dose pain relief for severe discomfort.',
+                'price'       => 9.50,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Back Pain Support Belt',
+                'description' => 'Supportive belt for lower back pain relief.',
+                'price'       => 24.99,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Adhesive Bandages Pack',
+                'description' => 'Assorted sizes of waterproof adhesive bandages.',
+                'price'       => 4.99,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Sterile Gauze Pads',
+                'description' => 'Individually wrapped sterile gauze for wound care.',
+                'price'       => 6.50,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Medical Tape Roll',
+                'description' => 'Hypoallergenic tape for securing bandages.',
+                'price'       => 3.75,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Burn Relief Spray',
+                'description' => 'Cooling spray for minor burns and scalds.',
+                'price'       => 8.25,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Wound Cleaning Solution',
+                'description' => 'Gentle antiseptic solution for cleaning cuts and scrapes.',
+                'price'       => 5.99,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Emergency Thermal Blanket',
+                'description' => 'Compact foil blanket for heat retention in emergencies.',
+                'price'       => 3.50,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'CPR Face Shield',
+                'description' => 'Protective barrier for performing CPR safely.',
+                'price'       => 2.99,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Tweezers Set',
+                'description' => 'Precision tweezers for splinter and tick removal.',
+                'price'       => 6.75,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Instant Cold Pack',
+                'description' => 'Single-use cold pack for injuries, no refrigeration needed.',
+                'price'       => 2.50,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'First Aid Guide Book',
+                'description' => 'Illustrated guide for emergency first aid procedures.',
+                'price'       => 7.25,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Daytime Cold Relief',
+                'description' => 'Non-drowsy formula for daytime cold symptom relief.',
+                'price'       => 8.99,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Nighttime Cold Medicine',
+                'description' => 'Helps you rest while relieving cold symptoms.',
+                'price'       => 9.25,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Sore Throat Lozenges',
+                'description' => 'Medicated lozenges for throat pain relief.',
+                'price'       => 4.50,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Nasal Decongestant Spray',
+                'description' => 'Fast-acting relief from nasal congestion.',
+                'price'       => 6.99,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Chest Rub Ointment',
+                'description' => 'Medicated rub for congestion relief.',
+                'price'       => 7.50,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Cough Suppressant Syrup',
+                'description' => 'Effective relief from persistent coughs.',
+                'price'       => 8.75,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Flu Recovery Drink Mix',
+                'description' => 'Hot drink powder with vitamins and pain relief.',
+                'price'       => 5.99,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Fever Reducer Tablets',
+                'description' => 'Specifically formulated to reduce fever.',
+                'price'       => 6.25,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Throat Spray',
+                'description' => 'Numbing spray for immediate sore throat relief.',
+                'price'       => 7.99,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Mucus Relief Tablets',
+                'description' => 'Thins and loosens mucus to clear congestion.',
+                'price'       => 8.50,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Vitamin D3 Supplement',
+                'description' => '5000 IU vitamin D3 for bone and immune health.',
+                'price'       => 13.50,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/71X2Z2Z2Z2L._AC_SL1500_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'B Complex Vitamins',
+                'description' => 'Complete B vitamin complex for energy support.',
+                'price'       => 15.99,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/61X2Z2Z2Z2L._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Iron Supplement',
+                'description' => 'Gentle iron formula for optimal absorption.',
+                'price'       => 10.75,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/51X2Z2Z2Z2L._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Prenatal Vitamins',
+                'description' => 'Comprehensive nutrition for pregnant women.',
+                'price'       => 18.99,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Omega-3 Fish Oil',
+                'description' => 'Heart and brain health support supplement.',
+                'price'       => 16.50,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Calcium with Vitamin D',
+                'description' => 'Bone health support supplement.',
+                'price'       => 12.99,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Zinc Tablets',
+                'description' => 'Immune support and wound healing supplement.',
+                'price'       => 8.25,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Magnesium Supplement',
+                'description' => 'Supports muscle function and relaxation.',
+                'price'       => 11.99,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Probiotic Capsules',
+                'description' => 'Supports gut health and immune function.',
+                'price'       => 19.99,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Vitamin E Oil',
+                'description' => 'Topical oil for skin health.',
+                'price'       => 9.75,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Pulse Oximeter',
+                'description' => 'Measures blood oxygen levels and heart rate.',
+                'price'       => 29.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Digital Scale',
+                'description' => 'Accurate weight measurement with digital display.',
+                'price'       => 24.50,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Nebulizer Machine',
+                'description' => 'Converts liquid medication into mist for inhalation.',
+                'price'       => 59.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'TENS Unit',
+                'description' => 'Electronic pain relief device for muscle pain.',
+                'price'       => 45.75,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Infrared Thermometer',
+                'description' => 'Non-contact temperature measurement device.',
+                'price'       => 32.50,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Hearing Aid Batteries',
+                'description' => 'Long-lasting batteries for hearing aids.',
+                'price'       => 8.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Wrist Blood Pressure Monitor',
+                'description' => 'Compact and portable blood pressure device.',
+                'price'       => 39.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Mobility Walker',
+                'description' => 'Adjustable walker for mobility assistance.',
+                'price'       => 79.50,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Pill Organizer',
+                'description' => 'Weekly pill organizer with daily compartments.',
+                'price'       => 7.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Peak Flow Meter',
+                'description' => 'Measures lung function for asthma monitoring.',
+                'price'       => 22.50,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Allergy Relief Tablets',
+                'description' => 'Non-drowsy antihistamine for allergy symptoms.',
+                'price'       => 13.25,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Sleep Aid Tablets',
+                'description' => 'Gentle, non-habit forming sleep assistance.',
+                'price'       => 10.99,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Antacid Tablets',
+                'description' => 'Fast relief from heartburn and indigestion.',
+                'price'       => 5.75,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Elastic Bandage Wrap',
+                'description' => 'Stretchable bandage for compression and support.',
+                'price'       => 6.49,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Hot Water Bottle',
+                'description' => 'Traditional heat therapy for pain relief.',
+                'price'       => 11.25,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Compression Socks',
+                'description' => 'Graduated compression for improved circulation.',
+                'price'       => 18.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Finger Splint Set',
+                'description' => 'Adjustable splints for finger injuries.',
+                'price'       => 9.50,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Neti Pot',
+                'description' => 'Nasal irrigation device for sinus relief.',
+                'price'       => 14.25,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Coenzyme Q10',
+                'description' => 'Supports heart health and energy production.',
+                'price'       => 22.99,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Humidifier',
+                'description' => 'Adds moisture to air for respiratory comfort.',
+                'price'       => 34.95,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Eyedrop Solution',
+                'description' => 'Relieves dry, irritated eyes.',
+                'price'       => 7.99,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Stethoscope',
+                'description' => 'Professional-grade acoustic stethoscope.',
+                'price'       => 29.50,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Oral Rehydration Salts',
+                'description' => 'Electrolyte replacement for dehydration.',
+                'price'       => 4.99,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Orthopedic Insoles',
+                'description' => 'Supportive insoles for foot pain relief.',
+                'price'       => 17.25,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Knee Support Brace',
+                'description' => 'Stabilizing brace for knee injuries.',
+                'price'       => 25.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Acne Treatment Cream',
+                'description' => 'Medicated cream for acne-prone skin.',
+                'price'       => 11.50,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Melatonin Supplements',
+                'description' => 'Natural sleep cycle support.',
+                'price'       => 9.25,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Crutches',
+                'description' => 'Adjustable aluminum crutches for mobility support.',
+                'price'       => 45.00,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Vitamin B12 Spray',
+                'description' => 'Sublingual B12 for energy and nervous system health.',
+                'price'       => 13.75,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Stress Relief Supplement',
+                'description' => 'Herbal formula for stress and anxiety management.',
+                'price'       => 16.50,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Posture Corrector',
+                'description' => 'Adjustable brace for improved posture.',
+                'price'       => 19.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Emergency Blanket',
+                'description' => 'Lightweight thermal blanket for first aid kits.',
+                'price'       => 4.50,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Digestive Enzyme Supplements',
+                'description' => 'Supports healthy digestion and nutrient absorption.',
+                'price'       => 14.99,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Eye Mask',
+                'description' => 'Blackout sleep mask for better rest.',
+                'price'       => 8.75,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Hemorrhoid Relief Cream',
+                'description' => 'Soothing cream for hemorrhoid discomfort.',
+                'price'       => 12.25,
+                'category_id' => CategorySeeder::$categoryIds['Pain Relief'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Mosquito Repellent Spray',
+                'description' => 'DEET-free insect repellent.',
+                'price'       => 7.50,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Cervical Collar',
+                'description' => 'Soft foam neck support collar.',
+                'price'       => 16.99,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Throat Numbing Spray',
+                'description' => 'Fast-acting relief for sore throat pain.',
+                'price'       => 8.99,
+                'category_id' => CategorySeeder::$categoryIds['Cold & Flu'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Collagen Supplement',
+                'description' => 'Supports skin, hair, and joint health.',
+                'price'       => 21.50,
+                'category_id' => CategorySeeder::$categoryIds['Vitamins'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Lice Treatment Kit',
+                'description' => 'Complete kit for lice removal and prevention.',
+                'price'       => 24.99,
+                'category_id' => CategorySeeder::$categoryIds['First Aid'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+            [
+                'id'          => Ulid::generate(),
+                'name'        => 'Callus Remover',
+                'description' => 'Foot care tool for removing calluses.',
+                'price'       => 15.25,
+                'category_id' => CategorySeeder::$categoryIds['Medical Devices'],
+                'stock'       => 100,
+                'image_url'   => 'https://m.media-amazon.com/images/I/31wHat0ZkDL._AC_SL1000_.jpg'
+            ],
+        ];
+
+        DB::table('products')->insert($products);
+    }
+}
