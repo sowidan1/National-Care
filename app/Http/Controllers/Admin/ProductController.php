@@ -13,6 +13,13 @@ class ProductController
     {
         $products = Product::with('category')->paginate(10);
 
+        $products->getCollection()->transform(function ($product) {
+            if ($product->image_url && !filter_var($product->image_url, FILTER_VALIDATE_URL)) {
+                $product->image_url = asset(path: 'storage/' . $product->image_url);
+            }
+            return $product;
+        });
+
         return view('admin.products.index', compact('products'));
     }
 
@@ -29,9 +36,15 @@ class ProductController
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'description' => 'nullable|string',
-            'image_url' => 'nullable|url',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'category_id' => 'required|exists:categories,id',
         ]);
+
+        // Handle file upload if needed
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('products/images', 'public');
+        }
 
         try {
             Product::create([
@@ -39,7 +52,7 @@ class ProductController
                 'name' => $request->name,
                 'price' => $request->price,
                 'description' => $request->description,
-                'image_url' => $request->image_url,
+                'image_url' => $imagePath,
                 'category_id' => $request->category_id,
             ]);
 

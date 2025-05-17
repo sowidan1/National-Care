@@ -16,7 +16,7 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected $fillable = ['id', 'name', 'description', 'price', 'stock', 'category_id'];
+    protected $fillable = ['id', 'name', 'description', 'price', 'stock', 'category_id', 'image_url'];
 
     public function category()
     {
@@ -44,7 +44,7 @@ class Product extends Model
                 $changes['old'][$key] = $product->getOriginal($key);
                 $changes['new'][$key] = $value;
             }
-            if (!empty($changes['old'])) {
+            if (! empty($changes['old'])) {
                 event(new ProductChanged($product, 'updated', $changes));
             }
         });

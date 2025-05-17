@@ -9,7 +9,7 @@
                 <div class="relative overflow-hidden">
                     <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
                         class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                        onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=No+Image';">
+                        loading="lazy">
                     <div class="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
                         In Stock
                     </div>

@@ -16,7 +16,6 @@ Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
 
     Route::get('/dashboard', function () {
-        // dd('dashboard');
 
         return view('admin.dashboard');
     })->name('dashboard');
