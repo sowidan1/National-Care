@@ -23,7 +23,7 @@
 
         <!-- Edit Form -->
         <div class="bg-white rounded-2xl shadow-sm border p-6">
-            <form action="{{ route('admin.products.update', $product->id) }}" method="POST">
+            <form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="space-y-6">
@@ -42,11 +42,6 @@
                         <textarea id="description" name="description" rows="4" class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">{{ old('description', $product->description) }}</textarea>
                     </div>
                     <div>
-                        <label for="image_url" class="block text-sm font-medium text-gray-700">Image URL</label>
-                        <input type="url" id="image_url" name="image_url" value="{{ old('image_url', $product->image_url) }}"
-                            class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    </div>
-                    <div>
                         <label for="category_id" class="block text-sm font-medium text-gray-700">Category</label>
                         <select id="category_id" name="category_id" required
                             class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
@@ -55,6 +50,12 @@
                                 <option value="{{ $category->id }}" {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div>
+                        <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
+                        <input type="file" id="image" name="image" accept="image/*"
+                            class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+
                     </div>
                     <div class="flex justify-end gap-4">
                         <a href="{{ route('admin.products.index') }}" class="text-gray-600 hover:text-gray-800 text-sm font-medium py-2 px-4">Cancel</a>
