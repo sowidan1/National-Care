@@ -7,20 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class OrderItem extends Model
+class ProductLog extends Model
 {
     use HasFactory;
     use HasUlids;
     use SoftDeletes;
 
-    protected $fillable = [
-        'id', 'order_id', 'product_id', 'quantity', 'price',
-    ];
-
-    public function order()
-    {
-        return $this->belongsTo(Order::class);
-    }
+    protected $fillable = ['id', 'product_id', 'action', 'changed_by', 'changes', 'created_at'];
 
     public function product()
     {

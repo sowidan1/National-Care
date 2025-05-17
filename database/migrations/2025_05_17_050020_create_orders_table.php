@@ -17,6 +17,8 @@ return new class extends Migration
             $table->date('date');
             $table->string('status')->default('completed');
             $table->string('payment_method')->default('cash');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

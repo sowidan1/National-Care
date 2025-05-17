@@ -10,7 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory, SoftDeletes, HasUlids;
+    use HasFactory;
+    use HasUlids;
+    use SoftDeletes;
 
     protected $fillable = [
         'id',

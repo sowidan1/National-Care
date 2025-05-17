@@ -10,7 +10,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory, SoftDeletes, HasUlids;
+    use HasFactory;
+    use HasUlids;
+    use SoftDeletes;
+
+    protected $table = 'products';
 
     protected $fillable = [
         'id',
