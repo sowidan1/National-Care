@@ -47,6 +47,11 @@ php artisan ser
 npm run dev
 ```
 
+## 9. Storage Link
+```bash
+php artisan storage:link
+```
+
 ### If you are deploying the application to production, be sure to configure appropriate caching and optimize the application:
 ```bash
 php artisan optimize:clear
