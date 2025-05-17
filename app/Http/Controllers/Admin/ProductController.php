@@ -11,18 +11,9 @@ class ProductController
 {
     public function index()
     {
-        // Change your controller to use simple get() instead of paginate()
         $products = Product::with('category')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-
-        $products->getCollection()->transform(function ($product) {
-            if ($product->image_url && ! filter_var($product->image_url, FILTER_VALIDATE_URL)) {
-                $product->image_url = asset('storage/'.$product->image_url);
-            }
-
-            return $product;
-        });
 
         $categories = Category::all();
 

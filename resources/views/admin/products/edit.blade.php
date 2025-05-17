@@ -66,8 +66,4 @@
             </form>
         </div>
     </main>
-
-    <footer class="bg-gray-800 text-white p-4 text-center mt-10">
-        <p>© {{ date('Y') }} National Care. All rights reserved.</p>
-    </footer>
 </x-app-layout>

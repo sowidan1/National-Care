@@ -72,21 +72,6 @@
                         <p><strong>Address:</strong> {{ $viewOrder->address }}</p>
                         <p><strong>Date:</strong> {{ $viewOrder->date }}</p>
                         <p><strong>Payment Method:</strong> {{ ucfirst($viewOrder->payment_method) }}</p>
-                        <!-- Status Update Form -->
-                        <form action="{{ route('admin.orders.updateStatus', $viewOrder->id) }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <div class="mb-4">
-                                <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
-                                <select id="status" name="status" required
-                                    class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                    <option value="pending" {{ $viewOrder->status == 'pending' ? 'selected' : '' }}>Pending</option>
-                                    <option value="completed" {{ $viewOrder->status == 'completed' ? 'selected' : '' }}>Completed</option>
-                                    <option value="cancelled" {{ $viewOrder->status == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-blue-700">Update Status</button>
-                        </form>
                     </div>
 
                     <h4 class="text-md font-semibold text-gray-800 mt-6">Order Items</h4>
@@ -118,8 +103,4 @@
             </div>
         @endif
     </main>
-
-    <footer class="bg-gray-800 text-white p-4 text-center mt-10">
-        <p>© {{ date('Y') }} National Care. All rights reserved.</p>
-    </footer>
 </x-app-layout>

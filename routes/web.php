@@ -34,8 +34,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('products', ProductController::class);
 
     // Orders
-    Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders.index');
-    Route::patch('/orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.updateStatus');
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 
     // Categories Resource
     Route::resource('categories', CategoryController::class);

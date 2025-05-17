@@ -21,8 +21,8 @@
                 <p class="text-2xl font-bold text-blue-600">{{ \App\Models\Product::count() }}</p>
             </div>
             <div class="bg-white rounded-2xl shadow-sm border p-6">
-                <h3 class="text-lg font-semibold text-gray-800">Pending Orders</h3>
-                <p class="text-2xl font-bold text-blue-600">{{ \App\Models\Order::where('status', 'pending')->count() }}</p>
+                <h3 class="text-lg font-semibold text-gray-800">Orders</h3>
+                <p class="text-2xl font-bold text-blue-600">{{ \App\Models\Order::where('status', '!=', 'pending')->count() }}</p>
             </div>
             <div class="bg-white rounded-2xl shadow-sm border p-6">
                 <h3 class="text-lg font-semibold text-gray-800">Categories</h3>
