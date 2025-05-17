@@ -12,10 +12,9 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->foreignUlid('product_id')->constrained('products')->onDelete('cascade');
             $table->enum('action', ['created', 'updated', 'deleted']);
-            $table->foreignId('changed_by')->constrained('users')->onDelete('cascade');
+            $table->foreignId('changed_by')->nullable()->constrained('users')->onDelete('set null');
             $table->json('changes')->nullable();
-            $table->timestamp('created_at');
-
+            $table->timestamp('created_at')->useCurrent();
             $table->softDeletes();
         });
     }

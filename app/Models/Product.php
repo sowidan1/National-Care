@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use App\Events\ProductChanged;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
@@ -16,18 +16,41 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected $fillable = [
-        'id',
-        'category_id',
-        'name',
-        'description',
-        'price',
-        'image_path',
-        'stock',
-    ];
+    protected $fillable = ['id', 'name', 'description', 'price', 'stock', 'category_id'];
 
-    public function category(): BelongsTo
+    public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
+    protected static function booted(): void
+    {
+
+        static::created(function ($product) {
+            event(new ProductChanged($product, 'created', ['new' => $product->toArray()]));
+        });
+
+        static::updated(function ($product) {
+            $changes = [
+                'old' => [],
+                'new' => [],
+            ];
+            foreach ($product->getDirty() as $key => $value) {
+                $changes['old'][$key] = $product->getOriginal($key);
+                $changes['new'][$key] = $value;
+            }
+            if (!empty($changes['old'])) {
+                event(new ProductChanged($product, 'updated', $changes));
+            }
+        });
+
+        static::deleted(function ($product) {
+            event(new ProductChanged($product, 'deleted', ['old' => $product->toArray()]));
+        });
     }
 }
