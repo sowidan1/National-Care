@@ -9,7 +9,7 @@
 
         <!-- Empty cart message -->
         <div id="empty-cart" class="hidden text-center text-gray-600 text-lg mt-10">
-            Your cart is empty. <a href="{{ route('home') }}" class="text-blue-600 hover:underline">Shop now</a>.
+            Your cart is empty. <a href="{{ route('public.home') }}" class="text-blue-600 hover:underline">Shop now</a>.
         </div>
 
         <!-- Cart summary -->
@@ -18,16 +18,12 @@
                 <h3 class="text-lg font-semibold text-gray-800">Total:</h3>
                 <p id="cart-total" class="text-lg font-bold text-blue-600">$0.00</p>
             </div>
-            <button id="checkout-btn" data-checkout-url="{{ route('checkout') }}"
+            <button id="checkout-btn" data-checkout-url="{{ route('public.checkout') }}"
                 class="mt-4 w-full bg-blue-600 text-white text-sm font-medium py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
                 Proceed to Checkout
             </button>
         </div>
     </main>
-
-    <footer class="bg-gray-800 text-white p-4 text-center mt-10">
-        <p>© {{ date('Y') }} National Care. All rights reserved.</p>
-    </footer>
 
     <!-- Include SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

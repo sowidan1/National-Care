@@ -28,13 +28,9 @@
 
         <!-- No order message -->
         <div id="no-order" class="hidden text-center text-gray-600 text-lg mt-10">
-            No order found. <a href="{{ route('home') }}" class="text-blue-600 hover:underline">Shop now</a>.
+            No order found. <a href="{{ route('public.home') }}" class="text-blue-600 hover:underline">Shop now</a>.
         </div>
     </main>
-
-    <footer class="bg-gray-800 text-white p-4 text-center mt-10">
-        <p>© {{ date('Y') }} National Care. All rights reserved.</p>
-    </footer>
 
     <!-- Include SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

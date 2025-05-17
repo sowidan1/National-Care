@@ -45,10 +45,6 @@
         </div>
     </main>
 
-    <footer class="bg-gray-800 text-white p-4 text-center mt-10">
-        <p>© {{ date('Y') }} National Care. All rights reserved.</p>
-    </footer>
-
     <!-- Include SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/add-to-cart.js') }}"></script>

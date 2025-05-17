@@ -22,16 +22,20 @@
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">
         @if (!Auth::check())
-            @include('layouts.navigation-home')
+        @include('layouts.navigation-home')
         @else
-            @include('layouts.navigation-dashboard')
+        @include('layouts.navigation-dashboard')
         @endif
 
         <!-- Page Content -->
         <main>
             {{ $slot }}
         </main>
+        <footer class="bg-gray-800 text-white p-4 text-center mt-10">
+            <p>© {{ date('Y') }} National Care. All rights reserved.</p>
+        </footer>
     </div>
+
 </body>
 
 </html>

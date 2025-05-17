@@ -11,9 +11,10 @@ class HomeController extends Controller
         $products = Product::with('category')->paginate(12);
 
         $products->getCollection()->transform(function ($product) {
-            if ($product->image_url && !filter_var($product->image_url, FILTER_VALIDATE_URL)) {
-                $product->image_url = asset(path: 'storage/' . $product->image_url);
+            if ($product->image_url && ! filter_var($product->image_url, FILTER_VALIDATE_URL)) {
+                $product->image_url = asset(path: 'storage/'.$product->image_url);
             }
+
             return $product;
         });
 

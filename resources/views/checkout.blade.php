@@ -20,7 +20,7 @@
             <!-- Checkout Form -->
             <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Delivery Information</h3>
-                <form id="checkout-form" data-store-url="{{ route('orders.store') }}" data-confirmation-url="{{ route('order.confirmation') }}" class="space-y-4">
+                <form id="checkout-form" data-store-url="{{ route('public.orders.store') }}" data-confirmation-url="{{ route('public.order.confirmation') }}" class="space-y-4">
                     @csrf
                     <div>
                         <label for="full_name" class="block text-sm font-medium text-gray-700">Full Name</label>
@@ -47,13 +47,9 @@
 
         <!-- Empty cart message -->
         <div id="empty-cart" class="hidden text-center text-gray-600 text-lg mt-10">
-            Your cart is empty. <a href="{{ route('home') }}" class="text-blue-600 hover:underline">Shop now</a>.
+            Your cart is empty. <a href="{{ route('public.home') }}" class="text-blue-600 hover:underline">Shop now</a>.
         </div>
     </main>
-
-    <footer class="bg-gray-800 text-white p-4 text-center mt-10">
-        <p>© {{ date('Y') }} National Care. All rights reserved.</p>
-    </footer>
 
     <!-- Include SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

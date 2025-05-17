@@ -17,9 +17,10 @@ class ProductController
             ->paginate(10);
 
         $products->getCollection()->transform(function ($product) {
-            if ($product->image_url && !filter_var($product->image_url, FILTER_VALIDATE_URL)) {
-                $product->image_url = asset('storage/' . $product->image_url);
+            if ($product->image_url && ! filter_var($product->image_url, FILTER_VALIDATE_URL)) {
+                $product->image_url = asset('storage/'.$product->image_url);
             }
+
             return $product;
         });
 
@@ -63,7 +64,7 @@ class ProductController
 
             return redirect()->route('admin.products.index')->with('success', 'Product created successfully.');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to create product: ' . $e->getMessage())->withInput();
+            return redirect()->back()->with('error', 'Failed to create product: '.$e->getMessage())->withInput();
         }
     }
 
@@ -97,7 +98,7 @@ class ProductController
 
             return redirect()->route('admin.products.index')->with('success', 'Product updated successfully.');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to update product: ' . $e->getMessage())->withInput();
+            return redirect()->back()->with('error', 'Failed to update product: '.$e->getMessage())->withInput();
         }
     }
 
@@ -109,7 +110,7 @@ class ProductController
 
             return redirect()->route('admin.products.index')->with('success', 'Product deleted successfully.');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to delete product: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to delete product: '.$e->getMessage());
         }
     }
 }

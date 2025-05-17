@@ -4,11 +4,11 @@
             <div class="flex">
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    <x-nav-link :href="route('public.home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('cart')" :active="request()->routeIs('cart')">
+                    <x-nav-link :href="route('public.cart')" :active="request()->routeIs('cart')">
                         {{ __('Cart') }}
                     </x-nav-link>
                 </div>
