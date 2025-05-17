@@ -41,26 +41,5 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('categories', CategoryController::class);
 });
 
-// Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
-
-//     Route::get('/dashboard', function () {
-//         return view('admin.dashboard');
-//     })->name('dashboard');
-
-//     Route::get('products', [ProductController::class, 'index'])->name('admin.products.index');
-//     Route::get('products/create', [ProductController::class, 'create'])->name('admin.products.create');
-//     Route::post('products', [ProductController::class, 'store'])->name('admin.products.store');
-//     Route::get('products/{id}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
-//     Route::put('products/{id}', [ProductController::class, 'update'])->name('admin.products.update');
-//     Route::delete('products/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
-
-//     Route::get('/orders', [AdminOrderController::class, 'index'])->name('admin.orders.index');
-//     Route::patch('/orders/{id}/status', [AdminOrderController::class, 'updateStatus'])->name('admin.orders.updateStatus');
-
-//     Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories.index');
-//     Route::post('/categories', [CategoryController::class, 'store'])->name('admin.categories.store');
-//     Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('admin.categories.update');
-//     Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
-// });
 
 require __DIR__.'/auth.php';

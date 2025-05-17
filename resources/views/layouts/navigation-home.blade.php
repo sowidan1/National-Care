@@ -11,6 +11,11 @@
                     <x-nav-link :href="route('public.cart')" :active="request()->routeIs('cart')">
                         {{ __('Cart') }}
                     </x-nav-link>
+
+                    <!-- login -->
+                        <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                            {{ __('Login') }}
+                        </x-nav-link>
                 </div>
             </div>
         </div>
